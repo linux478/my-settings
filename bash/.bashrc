@@ -107,4 +107,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# change the prompt to include the following
+#\u - username
+#\h - hostname
+#\w - current working directory
+#\n - newline
+#\j - number of jobs
+#\! - command history number
+
+export PS1='\u@\h:\w\n[\j][\!]\$ '
 export CDPATH=$HOME/Documents
