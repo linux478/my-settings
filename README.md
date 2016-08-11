@@ -4,4 +4,5 @@ This is a project of my personal settings.  The following is a list of
 software that I am keeping track of:
 
 bash
+ratpoison
 vim

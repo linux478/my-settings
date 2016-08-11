@@ -108,3 +108,4 @@ if ! shopt -oq posix; then
 fi
 
 export CDPATH=$HOME/Documents
+set bell-style visible
