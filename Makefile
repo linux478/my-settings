@@ -1,12 +1,12 @@
-all: bash ratpoison vim 
+all: $(HOME)/.bashrc $(HOME)/.ratpoisonrc $(HOME)/.vimrc
 
-bash: 
+$(HOME)/.bashrc: 
 	cp -ru bash/.bashrc ~
 
-ratpoison: 
+$(HOME)/.ratpoisonrc: 
 	cp -u ratpoison/.ratpoisonrc ~
 
-vim: 
+$(HOME)/.vimrc: 
 	cp -ru vim/.vim ~
 	cp -u vim/.vimrc ~
 
