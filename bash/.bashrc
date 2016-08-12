@@ -107,13 +107,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# change the prompt to include the following
-#\u - username
-#\h - hostname
-#\w - current working directory
-#\n - newline
-#\j - number of jobs
-#\! - command history number
+## change the prompt to include the following
+## \u - username
+## \h - hostname
+## \w - current working directory
+## \n - newline
+## \j - number of jobs
+## \! - command history number
+##
+##  the following line returns the primary and secondary names from the jobs
+##  commands.  Another words return the first word of the commands '+' and '-'
+##  marked by the jobs command.
+## 
+##  $(jobs | awk '/\+|-/ {print $1$3;}' | tr '\n' '|' | sed -e 's/.$//' | sed -e 's/\[[0123456789]\+\]//g')
 
-export PS1='\u@\h:\w\n[\j][\!]\$ '
+export PS1="\e[36m[$(jobs | awk '/\+|-/ {print $1$3;}' | tr '\n' '|' | sed -e 's/.$//' | sed -e 's/\[[0123456789]\+\]//g')]\e[0m\u@\h:\e[32m\w\n\e[0m[\j][\!]\$ "
+
 export CDPATH=$HOME/Documents
