@@ -1,15 +1,14 @@
 all: $(HOME)/.bashrc $(HOME)/.inputrc $(HOME)/.ratpoisonrc $(HOME)/.vimrc
 
-$(HOME)/.bashrc: 
+$(HOME)/.bashrc: bash/.bashrc
 	cp -ru bash/.bashrc ~
 
-$(HOME)/.inputrc: 
+$(HOME)/.inputrc: input/.inputrc
 	cp -ru input/.inputrc ~
 
-$(HOME)/.ratpoisonrc: 
+$(HOME)/.ratpoisonrc: ratpoison/.ratpoisonrc
 	cp -u ratpoison/.ratpoisonrc ~
 
-$(HOME)/.vimrc: 
+$(HOME)/.vimrc: vim/.vimrc
 	cp -ru vim/.vim ~
 	cp -u vim/.vimrc ~
-
