@@ -107,6 +107,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#############################################################################
+## Function: lsjobs
+## Description: list the first word of the primary and secondary commands
+## Sample Output: -lynx|+vim
+#############################################################################
+lsjobs() {
+  	str=$(jobs | awk '/\+|-/ {print $1$3;}' | tr '\n' '|' | sed -e 's/.$//' | sed -e 's/\[[0123456789]\+\]//g');
+ 	echo $str;
+}
+
 ## change the prompt to include the following
 ## \u - username
 ## \h - hostname
@@ -114,13 +124,6 @@ fi
 ## \n - newline
 ## \j - number of jobs
 ## \! - command history number
-##
-##  the following line returns the primary and secondary names from the jobs
-##  commands.  Another words return the first word of the commands '+' and '-'
-##  marked by the jobs command.
-## 
-##  $(jobs | awk '/\+|-/ {print $1$3;}' | tr '\n' '|' | sed -e 's/.$//' | sed -e 's/\[[0123456789]\+\]//g')
 
-export PS1="\e[36m[$(jobs | awk '/\+|-/ {print $1$3;}' | tr '\n' '|' | sed -e 's/.$//' | sed -e 's/\[[0123456789]\+\]//g')]\e[0m\u@\h:\e[32m\w\n\e[0m[\j][\!]\$ "
-
+export PS1="\e[36m[$(lsjobs)]\e[0m\u@\h:\e[32m\w\n\e[0m[\j][\!]\$ "
 export CDPATH=$HOME/Documents
