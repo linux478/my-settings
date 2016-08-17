@@ -5,3 +5,19 @@ bind l focusright
 
 bind f exec $HOME/.bin/firefox
 bind w exec $HOME/.bin/windows
+
+bind C-1 exec rpws 1
+bind C-2 exec rpws 2
+bind C-3 exec rpws 3
+bind C-4 exec rpws 4
+bind C-5 exec rpws 5
+bind C-6 exec rpws 6
+bind C-7 exec rpws 7
+bind C-8 exec rpws 8
+bind C-9 exec rpws 9
+
+# adding workspaces
+exec /usr/bin/rpws init 6 -k
+
+# running xterm at startup
+exec xterm

@@ -22,4 +22,5 @@ let g:vimwiki_list = [{
   \ 'path_html': '~/public_html/',
   \ 'template_path': '$HOME/Documents/wiki/templates',
   \ 'template_default': 'default',
-  \ 'template_ext': 'tpl'}]
+  \ 'template_ext': 'tpl'},
+  \{'path': '~/Documents/jobs/'}]
