@@ -3,7 +3,7 @@ bind h focusleft
 bind k focusup
 bind l focusright
 
-bind f exec $HOME/.bin/firefox
+bind f exec iceweasel
 bind w exec $HOME/.bin/windows
 
 bind C-1 exec rpws 1
@@ -21,3 +21,4 @@ exec /usr/bin/rpws init 6 -k
 
 # running xterm at startup
 exec xterm
+exec iceweasel
