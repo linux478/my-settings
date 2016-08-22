@@ -21,4 +21,5 @@ exec /usr/bin/rpws init 6 -k
 
 # running xterm at startup
 exec xterm
+exec gvim
 exec iceweasel
